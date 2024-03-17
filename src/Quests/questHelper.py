@@ -59,16 +59,8 @@ def get_modules_list():
         modules.append('bitavatar')
         shuffle(modules)
 
-    if settings.town_story_switch == 1:
-        modules.append('townstory')
-        shuffle(modules)
-
     if settings.sarubol_mint_switch == 1:
         modules.append('sarubol')
-        shuffle(modules)
-
-    if settings.zypher_2048_switch == 1:
-        modules.append('zypher2048')
         shuffle(modules)
 
     if settings.nidum_mint_switch == 1:

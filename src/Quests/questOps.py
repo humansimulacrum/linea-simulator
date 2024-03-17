@@ -1,10 +1,8 @@
 import settings
 from src.Quests.Week2.yooldo.daily import sending
-from src.Quests.Week2.yooldo.trobSwap import swapping
 from src.Quests.Week2.Pictographs.mint import minting as pictographs_mint, staking as pictographs_stake
 from src.Quests.Week2.AbyssWorld.mint import minting as abyss_mint
 from src.Quests.Week2.Omnisea.mint import minting as omnisea_mint
-from src.Quests.Week1.GamerBoom.mint import gamer_boom_mint
 from src.Quests.Week1.GamerBoom.proof import gamer_boom_proof
 from src.Quests.Week3.AsMatch.mint import as_match_mint
 from src.Helpers.gasPriceChecker import check_limit
@@ -14,9 +12,7 @@ from src.Quests.Week3.ReadOn.curate import read_on_curate
 from src.Quests.Week3.SendingMe.abuse import sending_me
 from src.Quests.Week3.Gamic.swap import gamic_swap
 from src.Quests.Week3.BitAvatar.checkIn import bit_avatar
-from src.Quests.Week1.TownStory.mint import town_story
 from src.Quests.Week4.Sarubol.mint import sarubol_mint
-from src.Quests.Week4.Zypher.start import zypher
 from src.Quests.Week1.Nidum.mint import nidum_mint
 from src.Quests.Week4.LuckyCat.mint import lucky_cat
 
@@ -29,10 +25,6 @@ def quest_ops(wallet, modules):
             if settings.daily_switch == 1:
                 check_limit()
                 sending(wallet)
-
-            if settings.trob_swap_switch == 1:
-                check_limit()
-                swapping(wallet)
 
         if module == 'pictographs':
             print(f'    ***   Модуль Pictographs   ***   ')
@@ -58,9 +50,6 @@ def quest_ops(wallet, modules):
             if settings.gamer_boom_proof_switch == 1:
                 check_limit()
                 running(wallet, gamer_boom_proof)
-            if settings.gamer_boom_mint_switch == 1:
-                check_limit()
-                running(wallet, gamer_boom_mint)
 
         if module == 'dmail':
             print(f'    ***   Модуль Dmail  ***   ')
@@ -92,20 +81,10 @@ def quest_ops(wallet, modules):
             check_limit()
             running(wallet, bit_avatar)
 
-        if module == 'townstory':
-            print(f'    ***   Модуль TownStory  ***   ')
-            check_limit()
-            running(wallet, town_story)
-
         if module == 'sarubol':
             print(f'    ***   Модуль Sarubol  ***   ')
             check_limit()
             running(wallet, sarubol_mint)
-
-        if module == 'zypher2048':
-            print(f'    ***   Модуль Zypher 2048  ***   ')
-            check_limit()
-            running(wallet, zypher)
 
         if module == 'nidum':
             print(f'    ***   Модуль Nidum Mint  ***   ')

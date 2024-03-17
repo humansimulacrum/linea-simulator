@@ -29,13 +29,9 @@ def read_wallets():
     index = 1
     w3 = Web3()
     for wl in wallet_info:
-        num = wl.split(', ')[0]
-        wallet_num = int(num)
-        key = wl.split(', ')[1]
+        key = wl
         address = w3.eth.account.from_key(key).address
-        exchange = wl.split(', ')[2]
-        exc_address = Web3.to_checksum_address(exchange)
-        wlt = Wallet(wallet_num, key, address, exc_address, index)
+        wlt = Wallet(key, address, index)
         index += 1
         wallet_list.append(wlt)
     return wallet_list
