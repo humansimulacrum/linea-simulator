@@ -1,0 +1,5 @@
+web3~=6.11.3
+requests~=2.31.0
+okx==1.0.8
+openpyxl~=3.1.2
+loguru~=0.7.2
