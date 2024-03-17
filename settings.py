@@ -21,7 +21,7 @@ try_delay = [5, 7]  # Перерыв между доп попытками
 
 # ///// Параметры для квестов Week 1
 gamer_boom_enable = 0  # Активны ли модули GamerBoom
-gamer_boom_proof_switch = 1  # Включен ли proof GamerBoom
+gamer_boom_proof_switch = 0  # Включен ли proof GamerBoom
 
 nidum_mint_switch = 0  # Активен ли модуль Nidum минт
 
@@ -29,30 +29,30 @@ nidum_mint_switch = 0  # Активен ли модуль Nidum минт
 # ///// Параметры для квестов Week 2
 abyss_world_mint_switch = 0  # Включен ли минт Abyss World
 
-pictographs_enable = 1  # Активны ли модули Pictographs
-pictographs_mint_switch = 1  # Включен ли минт nft Pictographs
+pictographs_enable = 0  # Активны ли модули Pictographs
+pictographs_mint_switch = 0  # Включен ли минт nft Pictographs
 pictographs_stake_switch = 0  # БОНУСНОЕ | Включен ли стейкинг nft Pictographs
 
 omnisea_mint_switch = 0  # Включен ли минт Omnisea (Satoshi Universe)
 
-yooldo_enable = 0  # Активны ли модули yooldo
+yooldo_enable = 1  # Активны ли модули yooldo
 daily_switch = 1  # Включен ли модуль Daily Stand-up
 
 # ///// Параметры для квестов Week 3
-dmail_switch = 1  # Активен ли модуль Dmail
+dmail_switch = 0  # Активен ли модуль Dmail
 
-gamic_switch = 1  # Активен ли модуль Gamic
+gamic_switch = 0  # Активен ли модуль Gamic
 # Количество эфира, посылаемое на адрес контракта
 gamic_eth_value = [0.0000001, 0.0000003]
 gamic_eth_digs = 7  # Знаков после запятой для эфира
 
-as_match_mint_switch = 1  # Активен ли модуль AsMatch
+as_match_mint_switch = 0  # Активен ли модуль AsMatch
 
-bit_avatar_switch = 1  # Активен ли модуль BitAvatar
+bit_avatar_switch = 0  # Активен ли модуль BitAvatar
 
-read_on_switch = 1  # Активен ли модуль ReadOn
+read_on_switch = 0  # Активен ли модуль ReadOn
 
-sending_me_switch = 1  # Активен ли модуль SendingMe
+sending_me_switch = 0  # Активен ли модуль SendingMe
 # Количество эфира, посылаемое на адрес контракта
 sending_me_eth_value = [0.00000001, 0.0000003]
 sending_me_eth_digs = 8  # Знаков после запятой для эфира

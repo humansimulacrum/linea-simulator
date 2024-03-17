@@ -6,7 +6,7 @@ import settings
 
 def build_txn(wallet):
     try:
-        value = linea_net.web3.to_wei(0.000002, 'ether')
+        value = linea_net.web3.to_wei(0.0001, 'ether')
         txn = get_txn_dict(wallet.address, linea_net, value)
         txn['to'] = linea_net.web3.to_checksum_address(
             '0x63ce21bd9af8cc603322cb025f26db567de8102b')
@@ -21,18 +21,14 @@ def daily_check_in(wallet):
         print(f'Делаем Daily Stand-Up')
 
         txn = build_txn(wallet)
-        estimate_gas = check_estimate_gas(txn, linea_net)
-        if type(estimate_gas) is str:
-            print(f'{estimate_gas}')
-            return False
-        else:
-            txn['gas'] = estimate_gas
-            txn_hash, txn_status = exec_txn(wallet.key, txn, linea_net)
-            print(f'Hash: {txn_hash}')
+        estimate_gas = 38406
+        txn['gas'] = estimate_gas
+        txn_hash, txn_status = exec_txn(wallet.key, txn, linea_net)
+        print(f'Hash: {txn_hash}')
 
-            wallet.txn_num += 1
-            delay_sleep(settings.txn_delay[0], settings.txn_delay[1])
-            return True
+        wallet.txn_num += 1
+        delay_sleep(settings.txn_delay[0], settings.txn_delay[1])
+        return True
 
     except Exception as ex:
         print(f'Ошибка в (daily: daily_check_in) {ex.args}')

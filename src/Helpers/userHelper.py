@@ -18,10 +18,6 @@ def get_info(wallets):
         else:
             print('Модуль GamerBoom Proof Отключен')
 
-        if stgs.gamer_boom_mint_switch == 1:
-            print('Модуль GamerBoom Mint Включен')
-        else:
-            print('Модуль GamerBoom Mint Отключен')
     else:
         print('Квесты GamerBoom Отключены')
 
@@ -30,21 +26,12 @@ def get_info(wallets):
     else:
         print('Модуль Nidum Nft Отключен')
 
-    if stgs.town_story_switch == 1:
-        print('Модуль Town Story Включен')
-    else:
-        print('Модуль Town Story Отключен')
-
     if stgs.yooldo_enable == 1:
         if stgs.daily_switch == 1:
             print('Модуль Daily Stand-Up Включен')
         else:
             print('Модуль Daily Stand-Up Отключен')
 
-        if stgs.trob_swap_switch == 1:
-            print('Модуль TROB swap Включен')
-        else:
-            print('Модуль TROB swap Отключен')
     else:
         print('Квесты Yooldo Отключены')
 
@@ -110,12 +97,6 @@ def get_info(wallets):
         print('Модуль LuckyCat Включен')
     else:
         print('Модуль LuckyCat Отключен')
-
-    print(
-        'Список обнаруженных адресов кошельков -- адресов бирж')
-    for wallet in wallets:
-        print(
-            f'№ {wallet.wallet_num} | {wallet.address} -- {wallet.exchange_address}')
 
     while True:
         print(f'Подтвердить? Y/N: ')
