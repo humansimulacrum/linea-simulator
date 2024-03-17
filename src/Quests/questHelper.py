@@ -1,7 +1,6 @@
 from random import shuffle
 from src.networks import linea_net
 import settings
-from src.logger import cs_logger
 from src.Helpers.txnHelper import check_estimate_gas, exec_txn
 from src.Helpers.helper import delay_sleep
 
@@ -85,30 +84,30 @@ def get_modules_list():
 
 def run_quest(wallet, quest):
     try:
-        cs_logger.info(f'{quest.title}')
+        print(f'{quest.title}')
         txn = quest.build_txn(wallet)
         estimate_gas = check_estimate_gas(txn, linea_net)
         if type(estimate_gas) is str:
-            cs_logger.info(f'{estimate_gas}')
+            print(f'{estimate_gas}')
             return False
         else:
             txn['gas'] = estimate_gas
             txn_hash, txn_status = exec_txn(wallet.key, txn, linea_net)
-            cs_logger.info(f'Hash: {txn_hash}')
+            print(f'Hash: {txn_hash}')
 
             wallet.txn_num += 1
             delay_sleep(settings.txn_delay[0], settings.txn_delay[1])
             return True
 
     except Exception as ex:
-        cs_logger.info(f'Ошибка в (questHelper: run_quest) {ex.args}')
+        print(f'Ошибка в (questHelper: run_quest) {ex.args}')
 
 
 def running(wallet, quest):
     attempt = 1
     txn_status = False
     while txn_status is False and attempt < 4:
-        cs_logger.info(f' // Попытка №: {attempt}')
+        print(f' // Попытка №: {attempt}')
         txn_status = run_quest(wallet, quest)
         attempt += 1
         if txn_status is False:

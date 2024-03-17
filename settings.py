@@ -37,47 +37,15 @@ exc_digs_max = 5
 
 
 #       / RPC сетей /
-ethereum_rpc = 'https://1rpc.io/eth'
 linea_rpc = 'https://rpc.linea.build'
-arbitrum_rpc = 'https://1rpc.io/arb'
-optimism_rpc = 'https://1rpc.io/op'
 
-
-#       / Параметры модулей /
-# 0 - Вывод сразу из Linea на биржу | 1 - Бридж в Arbitrum, затем вывод на биржу
-switch_bridge_exc = 0
-
-
-#       / Параметры перерывов /
-bridge_delay = [10, 15]  # Перерыв после поступления средств в сеть назначения
 txn_delay = [5, 20]  # Перерыв после транзакции
 wallet_delay = [15, 100]  # Перерыв между кошельками
-
-
-#       / Параметры бриджа /
-bridge_sum_mode = 1  # 1 - Бридж всего эфира, 2 - Бридж процента от баланса
-bridge_sum_percent = [0.015, 0.021]  # Процент, который бриджим
-bridge_sum_percent_digs = 3  # Количество знаков для процента
-# Количество знаков после запятой для округления суммы бриджа
-bridge_sum_digs = [4, 6]
-# Минимальный и максимальный множитель цены газа для транзакции бриджа
-random_mult = [1.15, 1.20]
-
-#   Старгейт бридж
-net_bridge = ['Arbitrum', 'Optimism']
-slippage = 0.010  # Проскальзывание для бриджа (например: 0.005 = 0.5 %)
 
 
 #       / Параметры транзы /
 gas_price_mult = [1.02, 1.04]  # Наценка на газ
 gas_mult = [1.45, 1.75]  # Добавочный процент для количества газа
-
-
-#       / Параметры Proof of Humanity  /
-poh_enable = 0  # Включены ли транзакции POH
-trusta_a_switch = 1  # Включен ли модуль Trusta Group A
-trusta_b_switch = 1  # Включен ли модуль Trusta Group B
-ruby_switch = 1  # Включен ли модуль RubyScore Group B
 
 
 #       / Параметры операций для квестов /
@@ -138,19 +106,12 @@ sarubol_mint_switch = 0  # Активен ли модуль Sarubol mint
 zypher_2048_switch = 0  # Активен ли модуль Zypher 2048
 lucky_cat_switch = 0  # Активен ли модуль LuckyCat
 
-
-#       / Параметры старых модулей /
-eth_swap_switch = 0  # Включен ли свап ETH на USDC перед операциями
-usdc_swap_switch = 0  # Включен ли свап USDC на ETH после операций
-# Количество USDC на которое будем свапать эфир перед операциями
-usdc_volume = [1, 5]
-
 #       / Параметры для работы скрипта /
 # Запас эфира при переводе на адрес биржи и бридже (ETH), чтобы точно прошло
 exc_remains = [0.000003, 0.000005]
 rem_digs = 6  # Количество знаков после запятой для остатка на кошельке
 test_mode = 0
 last_row = 1
-gas_price_ether = 999
+gas_price_ether = 1.5
 stop_flag = False
 start_flag = False

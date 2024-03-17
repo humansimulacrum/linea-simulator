@@ -2,7 +2,7 @@ from web3 import Web3
 import settings
 import time
 
-web3 = Web3(Web3.HTTPProvider(settings.ethereum_rpc))
+web3 = Web3(Web3.HTTPProvider(settings.linea_rpc))
 
 
 def check_gas_price_ether():
@@ -30,4 +30,5 @@ def check_limit():
 
 
 def wait_anim(symbol, gas_price):
-    print(f'\rЖдем, цена газа большая: {int(gas_price)} gWei  {symbol} ', end='')
+    print(
+        f'\rЖдем, цена газа большая: {int(gas_price)} gWei  {symbol} ', end='')

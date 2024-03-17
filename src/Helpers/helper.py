@@ -1,19 +1,19 @@
 import random
-import src.logger as logger
+import requests
+from eth_account.messages import encode_defunct
 import time
 import math
 from web3 import Web3
 import settings
 from src.Wallet import Wallet
 import datetime
-import requests
-from eth_account.messages import encode_defunct
 
 
 def sign_msg(wallet, message_text, net):
     text_hex = "0x" + message_text.encode('utf-8').hex()
     text_encoded = encode_defunct(hexstr=text_hex)
-    signed_message = net.web3.eth.account.sign_message(text_encoded, private_key=wallet.key)
+    signed_message = net.web3.eth.account.sign_message(
+        text_encoded, private_key=wallet.key)
     signature = signed_message.signature
     return signature.hex()
 
@@ -21,18 +21,6 @@ def sign_msg(wallet, message_text, net):
 def get_curr_time():
     script_time = datetime.datetime.now().strftime("%d-%m-%y %H:%M")
     return script_time
-
-
-def get_price(token_name):
-    url = f'https://min-api.cryptocompare.com/data/price?fsym={token_name}&tsyms=USDT&api_key=c8a5e2ad37b494efbbd89af2f4edb232353d228e93406615a36b273c0fccd4f2'
-    response = requests.get(url)
-    try:
-        result = [response.json()]
-        price = result[0]['USDT']
-    except Exception as error:
-        logger.cs_logger.info(f'{error.args}')
-        price = 2370
-    return price
 
 
 def read_wallets():
@@ -66,21 +54,23 @@ def check_balance_change(wallet, balance, net_dst, timeout, period=20):
 
 def delay_sleep(min_delay, max_delay):
     delay = random.randint(min_delay, max_delay)
-    logger.cs_logger.info(f'Делаем перерыв в {delay} сек')
+    print(f'Делаем перерыв в {delay} сек')
     time.sleep(delay)
     return delay
 
 
 def get_random_value(min_value, max_value, digs=5):
     random_value = random.uniform(min_value, max_value)
-    trunc = math.trunc(random_value * (10 ** digs))  # Округляем до {digs} знаков после запятой
+    # Округляем до {digs} знаков после запятой
+    trunc = math.trunc(random_value * (10 ** digs))
     random_value_tr = trunc / (10 ** digs)
     return random_value_tr
 
 
 def trunc_value(value, digs_min, digs_max):
     digs = random.randint(digs_min, digs_max)
-    trunc = math.trunc(value * (10 ** digs))  # Округляем до {digs} знаков после запятой
+    # Округляем до {digs} знаков после запятой
+    trunc = math.trunc(value * (10 ** digs))
     value_tr = trunc / (10 ** digs)
     return value_tr
 
