@@ -1,1 +1,1 @@
-Took script from https://github.com/wxtsky/linea-park and removed not needed parts for the personal usage.
+Took script from https://github.com/Y-Min13/LineaPark and removed not needed parts for the personal usage.
