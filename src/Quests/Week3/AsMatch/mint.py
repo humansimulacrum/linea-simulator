@@ -5,7 +5,7 @@ from src.Quests.questHelper import Quest
 
 
 class AsMatchMint(Quest):
-    title = 'Минтим AsMatch'
+    title = 'Minting AsMatch'
 
     def build_txn(self, wallet):
         try:
@@ -16,7 +16,7 @@ class AsMatchMint(Quest):
             txn['data'] = '0xefef39a1' + eth_abi.encode(['uint256'], [1]).hex()
             return txn
         except Exception as ex:
-            print(f'Ошибка в (AsMatch/mint: build_txn) {ex.args}')
+            print(f'Error in (AsMatch/mint: build_txn) {ex.args}')
 
 
 as_match_mint = AsMatchMint()

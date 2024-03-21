@@ -31,4 +31,4 @@ def check_limit():
 
 def wait_anim(symbol, gas_price):
     print(
-        f'\rЖдем, цена газа большая: {int(gas_price)} gWei  {symbol} ', end='')
+        f'\rHigh gas price, waiting: {int(gas_price)} gWei  {symbol} ', end='')

@@ -19,7 +19,7 @@ def build_txn_mint(wallet):
         txn['data'] = '0x14f710fe'
         return txn
     except Exception as ex:
-        print(f'Ошибка в (Pictographs/mint: build_txn) {ex.args}')
+        print(f'Error in (Pictographs/mint: build_txn) {ex.args}')
 
 
 def build_txn_stake(wallet):
@@ -32,12 +32,12 @@ def build_txn_stake(wallet):
         ).build_transaction(txn_dict)
         return txn
     except Exception as ex:
-        print(f'Ошибка в (Pictographs/mint: build_txn_stake) {ex.args}')
+        print(f'Error in (Pictographs/mint: build_txn_stake) {ex.args}')
 
 
 def mint_nft(wallet):
     try:
-        print(f'Минтим Pictographs Nft')
+        print(f'Minting Pictographs Nft')
 
         txn = build_txn_mint(wallet)
         estimate_gas = check_estimate_gas(txn, linea_net)
@@ -54,12 +54,12 @@ def mint_nft(wallet):
             return True
 
     except Exception as ex:
-        print(f'Ошибка в (Pictographs/mint: mint_nft) {ex.args}')
+        print(f'Error in (Pictographs/mint: mint_nft) {ex.args}')
 
 
 def stake_nft(wallet):
     try:
-        print(f'Стейкаем Pictographs Nft')
+        print(f'Staking Pictographs Nft')
 
         txn = build_txn_stake(wallet)
         estimate_gas = check_estimate_gas(txn, linea_net)
@@ -76,14 +76,14 @@ def stake_nft(wallet):
             return True
 
     except Exception as ex:
-        print(f'Ошибка в (Pictographs/mint: stake_nft) {ex.args}')
+        print(f'Error in (Pictographs/mint: stake_nft) {ex.args}')
 
 
 def minting(wallet):
     attempt = 1
     txn_status = False
     while txn_status is False and attempt < 4:
-        print(f' // Попытка №: {attempt}')
+        print(f' // Attempt №: {attempt}')
         txn_status = mint_nft(wallet)
         attempt += 1
         if txn_status is False:
@@ -94,7 +94,7 @@ def staking(wallet):
     attempt = 1
     txn_status = False
     while txn_status is False and attempt < 4:
-        print(f' // Попытка №: {attempt}')
+        print(f' // Attempt №: {attempt}')
         txn_status = stake_nft(wallet)
         attempt += 1
         if txn_status is False:

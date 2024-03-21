@@ -4,7 +4,7 @@ from src.Quests.questHelper import Quest
 
 
 class GamerBoomProof(Quest):
-    title = 'Делаем Proof GamerBoom'
+    title = 'Doing Proof GamerBoom'
 
     def build_txn(self, wallet):
         try:
@@ -14,7 +14,7 @@ class GamerBoomProof(Quest):
             txn['data'] = '0xb9a2092d'
             return txn
         except Exception as ex:
-            print(f'Ошибка в (GamerBoom/proof: build_txn) {ex.args}')
+            print(f'Error in (GamerBoom/proof: build_txn) {ex.args}')
 
 
 gamer_boom_proof = GamerBoomProof()

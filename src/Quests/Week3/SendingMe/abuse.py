@@ -6,7 +6,7 @@ from src.Helpers.helper import get_random_value
 
 
 class SendingMe(Quest):
-    title = 'Делаем SendingMe транзакцию'
+    title = 'Doing SendingMe транзакцию'
 
     def build_txn(self, wallet):
         try:
@@ -18,7 +18,7 @@ class SendingMe(Quest):
                 '0xc0DEb0445e1c307b168478f38eac7646d198F984')
             return txn
         except Exception as ex:
-            print(f'Ошибка в (SendingMe/abuse: build_txn) {ex.args}')
+            print(f'Error in (SendingMe/abuse: build_txn) {ex.args}')
 
 
 sending_me = SendingMe()

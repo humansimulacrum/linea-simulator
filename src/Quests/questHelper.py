@@ -71,6 +71,14 @@ def get_modules_list():
         modules.append('luckycat')
         shuffle(modules)
 
+    if settings.battlemon_switch == 1:
+        modules.append('battlemon')
+        shuffle(modules)
+
+    if settings.omni_zone_switch == 1:
+        modules.append('omnizone')
+        shuffle(modules)
+
     return modules
 
 
@@ -92,14 +100,14 @@ def run_quest(wallet, quest):
             return True
 
     except Exception as ex:
-        print(f'Ошибка в (questHelper: run_quest) {ex.args}')
+        print(f'Error in (questHelper: run_quest) {ex.args}')
 
 
 def running(wallet, quest):
     attempt = 1
     txn_status = False
     while txn_status is False and attempt < 4:
-        print(f' // Попытка №: {attempt}')
+        print(f' // Attempt №: {attempt}')
         txn_status = run_quest(wallet, quest)
         attempt += 1
         if txn_status is False:

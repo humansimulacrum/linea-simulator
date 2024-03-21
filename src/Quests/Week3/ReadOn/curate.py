@@ -6,7 +6,7 @@ from random import randint
 
 
 class ReadOn(Quest):
-    title = 'Делаем транзакцию ReadOn'
+    title = 'Doing транзакцию ReadOn'
 
     def build_txn(self, wallet):
         try:
@@ -18,7 +18,7 @@ class ReadOn(Quest):
                 eth_abi.encode(['uint64'], [content_url]).hex()
             return txn
         except Exception as ex:
-            print(f'Ошибка в (ReadOn/curate: build_txn) {ex.args}')
+            print(f'Error in (ReadOn/curate: build_txn) {ex.args}')
 
 
 read_on_curate = ReadOn()

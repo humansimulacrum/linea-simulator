@@ -6,7 +6,7 @@ import settings
 
 
 class Gamic(Quest):
-    title = 'Делаем свап в Gamic'
+    title = 'Doing сinап in Gamic'
 
     def build_txn(self, wallet):
         try:
@@ -19,7 +19,7 @@ class Gamic(Quest):
             txn['data'] = '0xd0e30db0'
             return txn
         except Exception as ex:
-            print(f'Ошибка в (Gamic/swap: build_txn) {ex.args}')
+            print(f'Error in (Gamic/swap: build_txn) {ex.args}')
 
 
 gamic_swap = Gamic()

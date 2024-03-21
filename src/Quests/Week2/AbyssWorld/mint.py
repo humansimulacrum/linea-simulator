@@ -14,12 +14,12 @@ def build_txn(wallet):
         txn['data'] = '0xefef39a1' + eth_abi.encode(['uint256'], [1]).hex()
         return txn
     except Exception as ex:
-        print(f'Ошибка в (daily: build_txn) {ex.args}')
+        print(f'Error in (daily: build_txn) {ex.args}')
 
 
 def mint_nft(wallet):
     try:
-        print(f'Минтим Abyss World Nft')
+        print(f'Minting Abyss World Nft')
 
         txn = build_txn(wallet)
         estimate_gas = check_estimate_gas(txn, linea_net)
@@ -36,14 +36,14 @@ def mint_nft(wallet):
             return True
 
     except Exception as ex:
-        print(f'Ошибка в (Pictographs/mint: stake_nft) {ex.args}')
+        print(f'Error in (Pictographs/mint: stake_nft) {ex.args}')
 
 
 def minting(wallet):
     attempt = 1
     txn_status = False
     while txn_status is False and attempt < 4:
-        print(f' // Попытка №: {attempt}')
+        print(f' // Attempt №: {attempt}')
         txn_status = mint_nft(wallet)
         attempt += 1
         if txn_status is False:

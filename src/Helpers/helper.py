@@ -50,7 +50,7 @@ def check_balance_change(wallet, balance, net_dst, timeout, period=20):
 
 def delay_sleep(min_delay, max_delay):
     delay = random.randint(min_delay, max_delay)
-    print(f'Делаем перерыв в {delay} сек')
+    print(f'Waiting for {delay} sec')
     time.sleep(delay)
     return delay
 

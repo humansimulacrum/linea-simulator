@@ -12,7 +12,7 @@ contract = linea_net.web3.eth.contract(linea_net.web3.to_checksum_address(contra
 
 
 class Nidum(Quest):
-    title = 'Минтим Nidum'
+    title = 'Minting Nidum'
 
     def build_txn(self, wallet):
         try:
@@ -25,7 +25,7 @@ class Nidum(Quest):
             ).build_transaction(txn_dict)
             return txn
         except Exception as ex:
-            print(f'Ошибка в (Nidum/mint: build_txn) {ex.args}')
+            print(f'Error in (Nidum/mint: build_txn) {ex.args}')
 
 
 nidum_mint = Nidum()

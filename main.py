@@ -21,11 +21,14 @@ def main():
         modules = get_modules_list()
         quest_ops(wallet, modules)
 
+        # Транзакции POH
+        proof_op(wallet)
+
         gPC.check_limit()
 
 
 # '''
-print(f'Найдено кошельков: {len(wallets)}')
+print(f'Wallets found: {len(wallets)}')
 userHelper.get_info(wallets)
 if settings.start_flag is True:
     gPC.check_gas_price_ether()
@@ -34,7 +37,7 @@ if settings.start_flag is True:
     check_thread.start()
     main_thread.start()
     main_thread.join()
-    print(f'Нажмите Enter для выхода')
+    print(f'Press Enter to exit')
     input()
-    print(f'Выход...')
+    print(f'Exiting...')
 # '''

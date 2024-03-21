@@ -41,7 +41,7 @@ def check_estimate_gas(txn, net):
         estimate_gas = int(net.web3.eth.estimate_gas(txn) * gas_mult)
         return estimate_gas
     except Exception as ex:
-        return f'Ошибка в (txnHelper: check_estimate_gas): {ex.args}'
+        return f'Error in (txnHelper: check_estimate_gas): {ex.args}'
 
 
 def exec_txn(private_key, txn, net):
@@ -54,7 +54,7 @@ def exec_txn(private_key, txn, net):
             check_tx_status(txn_hash, net, 3)
             return txn_hash.hex(), True
         if settings.test_mode == 1:
-            txn_hash = 'Test'  # Для тестов
+            txn_hash = 'Test'  # Для тестоin
             return txn_hash, True
     except Exception as ex:
-        return f'Ошибка в (exec_txn): {ex.args}', False
+        return f'Error in (exec_txn): {ex.args}', False

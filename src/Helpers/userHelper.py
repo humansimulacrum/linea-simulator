@@ -5,101 +5,101 @@ from src.networks import linea_net
 
 def get_info(wallets):
     print(
-        f'Цена газа в Linea: {linea_net.web3.from_wei(linea_net.web3.eth.gas_price, "gWei")} gWei')
+        f'Linea gas price : {linea_net.web3.from_wei(linea_net.web3.eth.gas_price, "gWei")} gWei')
 
     print(
-        f'Задержки между кошельками: от {stgs.wallet_delay[0]} до {stgs.wallet_delay[1]} сек')
+        f'Delay between wallets: from {stgs.wallet_delay[0]} to {stgs.wallet_delay[1]} s')
     print(
-        f'Задержки между транзакциями: от {stgs.txn_delay[0]} до {stgs.txn_delay[1]} сек')
+        f'Delay between transactions: from {stgs.txn_delay[0]} to {stgs.txn_delay[1]} s')
 
     if stgs.gamer_boom_enable == 1:
         if stgs.gamer_boom_proof_switch == 1:
-            print('Модуль GamerBoom Proof Включен')
+            print('Module GamerBoom Proof Enabled')
         else:
-            print('Модуль GamerBoom Proof Отключен')
+            print('Module GamerBoom Proof Disabled')
 
     else:
-        print('Квесты GamerBoom Отключены')
+        print('Quests GamerBoom Disabled')
 
     if stgs.nidum_mint_switch == 1:
-        print('Модуль Nidum Nft Включен')
+        print('Module Nidum Nft Enabled')
     else:
-        print('Модуль Nidum Nft Отключен')
+        print('Module Nidum Nft Disabled')
 
     if stgs.yooldo_enable == 1:
         if stgs.daily_switch == 1:
-            print('Модуль Daily Stand-Up Включен')
+            print('Module Daily Stand-Up Enabled')
         else:
-            print('Модуль Daily Stand-Up Отключен')
+            print('Module Daily Stand-Up Disabled')
 
     else:
-        print('Квесты Yooldo Отключены')
+        print('Quests Yooldo Disabled')
 
     if stgs.pictographs_enable == 1:
         if stgs.pictographs_mint_switch == 1:
-            print('Модуль Pictographs Mint Включен')
+            print('Module Pictographs Mint Enabled')
         else:
-            print('Модуль Pictographs Mint Отключен')
+            print('Module Pictographs Mint Disabled')
 
         if stgs.pictographs_stake_switch == 1:
-            print('Модуль Pictographs Stake Включен')
+            print('Module Pictographs Stake Enabled')
         else:
-            print('Модуль Pictographs Stake Отключен')
+            print('Module Pictographs Stake Disabled')
     else:
-        print('Квесты Pictographs Отключены')
+        print('Quests Pictographs Disabled')
 
     if stgs.abyss_world_mint_switch == 1:
-        print('Модуль Abyss World Включен')
+        print('Module Abyss World Enabled')
     else:
-        print('Модуль Abyss World Отключен')
+        print('Module Abyss World Disabled')
 
     if stgs.omnisea_mint_switch == 1:
-        print('Модуль Omnisea Включен')
+        print('Module Omnisea Enabled')
     else:
-        print('Модуль Omnisea Отключен')
+        print('Module Omnisea Disabled')
 
     if stgs.dmail_switch == 1:
-        print('Модуль Dmail Включен')
+        print('Module Dmail Enabled')
     else:
-        print('Модуль Dmail Отключен')
+        print('Module Dmail Disabled')
 
     if stgs.as_match_mint_switch == 1:
-        print('Модуль AsMatch Включен')
+        print('Module AsMatch Enabled')
     else:
-        print('Модуль AsMatch Отключен')
+        print('Module AsMatch Disabled')
 
     if stgs.read_on_switch == 1:
-        print('Модуль ReadOn Включен')
+        print('Module ReadOn Enabled')
     else:
-        print('Модуль ReadOn Отключен')
+        print('Module ReadOn Disabled')
 
     if stgs.sending_me_switch == 1:
-        print('Модуль SendingMe Включен')
+        print('Module SendingMe Enabled')
     else:
-        print('Модуль SendingMe Отключен')
+        print('Module SendingMe Disabled')
 
     if stgs.gamic_switch == 1:
-        print('Модуль Gamic Включен')
+        print('Module Gamic Enabled')
     else:
-        print('Модуль Gamic Отключен')
+        print('Module Gamic Disabled')
 
     if stgs.bit_avatar_switch == 1:
-        print('Модуль BitAvatar Включен')
+        print('Module BitAvatar Enabled')
     else:
-        print('Модуль BitAvatar Отключен')
+        print('Module BitAvatar Disabled')
 
     if stgs.sarubol_mint_switch == 1:
-        print('Модуль Sarubol Включен')
+        print('Module Sarubol Enabled')
     else:
-        print('Модуль Sarubol Отключен')
+        print('Module Sarubol Disabled')
 
     if stgs.lucky_cat_switch == 1:
-        print('Модуль LuckyCat Включен')
+        print('Module LuckyCat Enabled')
     else:
-        print('Модуль LuckyCat Отключен')
+        print('Module LuckyCat Disabled')
 
     while True:
-        print(f'Подтвердить? Y/N: ')
+        print(f'Confirm? Y/N: ')
         answer = input('')
         if answer.lower() == 'y':
             stgs.start_flag = True

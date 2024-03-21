@@ -11,7 +11,7 @@ contract = linea_net.web3.eth.contract(linea_net.web3.to_checksum_address(contra
 
 
 class Dmail(Quest):
-    title = 'Делаем Dmail транзакцию'
+    title = 'Doing Dmail транзакцию'
 
     def build_txn(self, wallet):
         try:
@@ -23,7 +23,7 @@ class Dmail(Quest):
             ).build_transaction(txn_dict)
             return txn
         except Exception as ex:
-            print(f'Ошибка в (Dmail/sendMail: build_txn) {ex.args}')
+            print(f'Error in (Dmail/sendMail: build_txn) {ex.args}')
 
 
 dmail_send = Dmail()

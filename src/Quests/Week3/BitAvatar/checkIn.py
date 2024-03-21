@@ -4,7 +4,7 @@ from src.Quests.questHelper import Quest
 
 
 class BitAvatar(Quest):
-    title = 'Делаем Check In в BitAvatar'
+    title = 'Doing Check In in BitAvatar'
 
     def build_txn(self, wallet):
         try:
@@ -14,7 +14,7 @@ class BitAvatar(Quest):
             txn['data'] = '0x183ff085'
             return txn
         except Exception as ex:
-            print(f'Ошибка в (BitAvatar/checkIn: build_txn) {ex.args}')
+            print(f'Error in (BitAvatar/checkIn: build_txn) {ex.args}')
 
 
 bit_avatar = BitAvatar()

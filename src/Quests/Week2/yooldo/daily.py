@@ -13,12 +13,12 @@ def build_txn(wallet):
         txn['data'] = '0xfb89f3b1'
         return txn
     except Exception as ex:
-        print(f'Ошибка в (daily: build_txn) {ex.args}')
+        print(f'Error in (daily: build_txn) {ex.args}')
 
 
 def daily_check_in(wallet):
     try:
-        print(f'Делаем Daily Stand-Up')
+        print(f'Doing Daily Stand-Up')
 
         txn = build_txn(wallet)
         estimate_gas = 38406
@@ -31,14 +31,14 @@ def daily_check_in(wallet):
         return True
 
     except Exception as ex:
-        print(f'Ошибка в (daily: daily_check_in) {ex.args}')
+        print(f'Error in (daily: daily_check_in) {ex.args}')
 
 
 def sending(wallet):
     attempt = 1
     txn_status = False
     while txn_status is False and attempt < 4:
-        print(f' _ Попытка №: {attempt}')
+        print(f' _ Attempt №: {attempt}')
         txn_status = daily_check_in(wallet)
         attempt += 1
         if txn_status is False:

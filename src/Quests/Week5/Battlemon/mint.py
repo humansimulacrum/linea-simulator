@@ -3,18 +3,18 @@ from src.Helpers.txnHelper import get_txn_dict
 from src.Quests.questHelper import Quest
 
 
-class LuckyCat(Quest):
-    title = 'Minting LuckyCat'
+class Battlemon(Quest):
+    title = 'Minting Battlemon'
 
     def build_txn(self, wallet):
         try:
             txn = get_txn_dict(wallet.address, linea_net)
             txn['to'] = linea_net.web3.to_checksum_address(
-                '0xc577018b3518cD7763D143d7699B280d6E50fdb6')
-            txn['data'] = '0x70245bdc'
+                '0x578705C60609C9f02d8B7c1d83825E2F031e35AA')
+            txn['data'] = '0x6871ee40'
             return txn
         except Exception as ex:
-            print(f'Error in (LuckyCat/mint: build_txn) {ex.args}')
+            print(f'Error in (Battlemon/mint: build_txn) {ex.args}')
 
 
-lucky_cat = LuckyCat()
+battlemon = Battlemon()

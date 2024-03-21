@@ -5,7 +5,7 @@ from src.Quests.questHelper import Quest
 
 
 class Sarubol(Quest):
-    title = 'Минтим Tanukiverse для Sarubol'
+    title = 'Minting Tanukiverse для Sarubol'
 
     def build_txn(self, wallet):
         try:
@@ -16,7 +16,7 @@ class Sarubol(Quest):
             txn['data'] = '0xefef39a1' + eth_abi.encode(['uint256'], [1]).hex()
             return txn
         except Exception as ex:
-            print(f'Ошибка в (Sarubol/mint: build_txn) {ex.args}')
+            print(f'Error in (Sarubol/mint: build_txn) {ex.args}')
 
 
 sarubol_mint = Sarubol()
