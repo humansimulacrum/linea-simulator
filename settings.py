@@ -3,19 +3,17 @@ modules = list()
 wallet_mode = 1  # Wallet mode: 1 - order as in file, 2 - random order
 wallets = open('wallets.txt')  # File with private keys
 # gas limit linea
-gas_price_limit = 0.9
-gas_price_net = 0.9
+gas_price_limit = 1
 
 
-linea_rpc = 'https://rpc.linea.build'
+linea_rpc = 'https://linea.drpc.org'
 
-txn_delay = [30, 60]  # Delay between transactions
-wallet_delay = [15, 100]  # Delay between wallets
+txn_delay = [60, 120]  # Delay between transactions
+wallet_delay = [600, 1200]  # Delay between wallets
 
 #       / Transaction params /
 gas_price_mult = [1.02, 1.04]  # Gas price multiplier
 gas_mult = [1.1, 1.2]  # Gas limit multiplier
-
 
 #       / Quest params /
 try_delay = [5, 7]  # Delay between attempts
@@ -84,6 +82,8 @@ sending_me_eth_value = [0.00000001, 0.000003]
 sending_me_eth_digs = 8  # precision
 
 
+# Script options
+gas_price_ether = 1.5
 test_mode = 0
 last_row = 1
 last_row_poh = 1
