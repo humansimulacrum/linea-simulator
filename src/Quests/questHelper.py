@@ -79,6 +79,10 @@ def get_modules_list():
         modules.append('omnizone')
         shuffle(modules)
 
+    if settings.nouns_swich == 1:
+        modules.append('nouns')
+        shuffle(modules)
+
     return modules
 
 

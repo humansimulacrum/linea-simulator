@@ -17,6 +17,7 @@ from src.Quests.Week1.Nidum.mint import nidum_mint
 from src.Quests.Week4.LuckyCat.mint import lucky_cat
 from src.Quests.Week5.Battlemon.mint import battlemon
 from src.Quests.Week5.OmniZone.mint import omni_zone
+from src.Quests.Week5.Nouns.mint import nouns_mint
 
 
 def quest_ops(wallet, modules):
@@ -107,3 +108,8 @@ def quest_ops(wallet, modules):
             print(f'    ***   Module OmniZone Mint  ***   ')
             check_limit()
             running(wallet, omni_zone)
+
+        if module == 'nouns':
+            print(f'    ***   Module Nouns Mint  ***   ')
+            check_limit()
+            running(wallet, nouns_mint)

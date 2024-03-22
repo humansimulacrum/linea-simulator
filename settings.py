@@ -53,6 +53,7 @@ lucky_cat_switch = 1  # Is LuckyCat module enabled
 # ///// Week 5
 omni_zone_switch = 1  # Is OmniZone module enabled
 battlemon_switch = 1  # Is Battlemon module enabled
+nouns_swich = 1  # Is Nouns module enabled
 
 
 # NOT TESTED
