@@ -22,7 +22,7 @@ def main():
         quest_ops(wallet, modules)
 
         # Транзакции POH
-        proof_op(wallet)
+        # proof_op(wallet)
 
         gPC.check_limit()
 
