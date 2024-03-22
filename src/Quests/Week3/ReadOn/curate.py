@@ -6,7 +6,7 @@ from random import randint
 
 
 class ReadOn(Quest):
-    title = 'Doing транзакцию ReadOn'
+    title = 'Doing transaction ReadOn'
 
     def build_txn(self, wallet):
         try:

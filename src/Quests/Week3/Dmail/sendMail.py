@@ -11,7 +11,7 @@ contract = linea_net.web3.eth.contract(linea_net.web3.to_checksum_address(contra
 
 
 class Dmail(Quest):
-    title = 'Doing Dmail транзакцию'
+    title = 'Doing Dmail transaction'
 
     def build_txn(self, wallet):
         try:

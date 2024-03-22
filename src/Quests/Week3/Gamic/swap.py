@@ -6,7 +6,7 @@ import settings
 
 
 class Gamic(Quest):
-    title = 'Doing сinап in Gamic'
+    title = 'Doing transaction in Gamic'
 
     def build_txn(self, wallet):
         try:

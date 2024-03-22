@@ -6,7 +6,7 @@ from src.Helpers.helper import get_random_value
 
 
 class SendingMe(Quest):
-    title = 'Doing SendingMe транзакцию'
+    title = 'Doing SendingMe transaction'
 
     def build_txn(self, wallet):
         try:
